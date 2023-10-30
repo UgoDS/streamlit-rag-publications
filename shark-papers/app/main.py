@@ -6,7 +6,11 @@ st.divider()
 st.subheader("Project description")
 st.write("Question Answering on Shark publications in New Caledonia")
 st.write(
-    "You should be able to upload any publication, ask a question and find the relevant part of documents, and finally generate a final answer given the contents found."
+    """You should be able to:
+    - upload any publication,
+    - ask a question, 
+    - find the relevant part of documents,
+    - and finally generate a final answer given the contents found."""
 )
 
 df_results = pd.DataFrame(
@@ -20,4 +24,4 @@ df_results.loc[0, :] = [
     True,
     20,
 ]
-st.table(df_results)
+st.table(df_results, )
