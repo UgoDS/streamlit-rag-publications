@@ -37,8 +37,8 @@ if uploaded_file is not None:
 
         if "OpenAI" in embeddings:
             doc_ai, nb_openai_used_tokens = add_embedding_openai(
-                doc, nb_openai_used_tokens
+                docs[0], nb_openai_used_tokens
             )
 
         if "HuggingFace" in embeddings:
-            doc_hug = add_embedding(doc)
+            doc_hug = add_embedding(docs[0])

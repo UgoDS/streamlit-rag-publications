@@ -12,5 +12,12 @@ st.write(
 df_results = pd.DataFrame(
     columns=["Name", "Year", "Author", "Description", "IsIndexed", "NbPages"]
 )
-df_results.loc[0, :] = ["Barrière Baie des Citrons", 2023, "Province Sud", "Etude d’impact de la mise en place d’un dispositif de barrière anti-requin au niveau de la Baie des Citrons", True, 20]
+df_results.loc[0, :] = [
+    "Barrière Baie des Citrons",
+    2023,
+    "Province Sud",
+    "Etude d’impact de la mise en place d’un dispositif de barrière anti-requin au niveau de la Baie des Citrons",
+    True,
+    20,
+]
 st.table(df_results)
