@@ -1,9 +1,8 @@
 import re
 import uuid
-from typing import List, Iterable
+from typing import Iterable, List
 
 from src.data_model.document import Document, SubDocument
-
 
 DEFAULT_SEPARATORS = ["\n\n", "\n", " ", ""]
 

@@ -1,10 +1,11 @@
-import openai
-from datetime import date
 import pickle
+from datetime import date
 from time import sleep
+
+import openai
 import tqdm
-from src.utils.openai_utils import get_openai_key
 from src.data_model.document import Document
+from src.utils.openai_utils import get_openai_key
 
 openai.api_key = get_openai_key()
 OPENAI_MODEL_EMBEDDING = "text-embedding-ada-002"

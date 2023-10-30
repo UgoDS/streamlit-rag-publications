@@ -1,12 +1,8 @@
-from src.embedding.huggingface_embedding import add_embedding
 import streamlit as st
-from time import sleep
-from tqdm import tqdm
+from src.embedding.huggingface_embedding import add_embedding
+from src.embedding.openai_embedding import add_embedding_openai
 from src.loader.loader import load_pdf
 from src.transformer.splitter import split_documents
-from src.embedding.openai_embedding import (
-    add_embedding_openai,
-)
 
 nb_openai_used_tokens = 0
 

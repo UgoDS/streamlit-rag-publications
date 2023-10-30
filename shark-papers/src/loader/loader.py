@@ -1,5 +1,6 @@
-from pypdf import PdfReader
 import uuid
+
+from pypdf import PdfReader
 from src.data_model.document import Document, SubDocument
 
 

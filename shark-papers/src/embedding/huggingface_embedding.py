@@ -1,6 +1,6 @@
-from tqdm import tqdm
-from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer
 from src.data_model.document import Document
+from tqdm import tqdm
 
 ST_MODEL_EMBEDDING = "multi-qa-MiniLM-L6-cos-v1"
 
