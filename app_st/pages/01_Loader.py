@@ -1,6 +1,8 @@
 import streamlit as st
 from app_st.utils_st import init_session_states, gst, load_file
 from data_model.loader import Loader
+from data_model.state import State
+from app_st.utils_file import save_pickle, create_file_name
 
 st.set_page_config("Loader", layout="wide")
 
@@ -11,11 +13,9 @@ if "nb_pages" not in st.session_state:
     st.session_state["nb_pages"] = 1
 nb_pages = gst("nb_pages")
 
-
 st.title("Loader Visualizer")
 
 st.subheader("Upload a document")
-
 uploaded_file = st.file_uploader("Load any pdf file", type=["pdf"])
 if uploaded_file is not None:
     with st.expander("Compare Loaders"):
@@ -31,8 +31,8 @@ if uploaded_file is not None:
         def get_nb_pages():
             loader_ = "PyPDF"
             return load_file(uploaded_file, loader_).nb_pages
-        
-        nb_pages = get_nb_pages() 
+
+        nb_pages = get_nb_pages()
         st.warning(f"There are {nb_pages} pages")
 
         if len(loader_selected) > 0:
@@ -47,8 +47,13 @@ if uploaded_file is not None:
                 dict_docs[f"doc_{loader_}"] = load_file(uploaded_file, loader_)
                 col.write(dict_docs[f"doc_{loader_}"].sub_documents[page_selected].text)
     with st.expander("Pick a loader"):
-        picked_loader = st.selectbox(
-            "Choose one", [pdf_loader.value for pdf_loader in Loader], None
-        )
-        if picked_loader:
-            pass
+        with st.form("Save Loaded data"):
+            picked_loader = st.selectbox(
+                "Choose one", [pdf_loader.value for pdf_loader in Loader], None
+            )
+            button_save = st.form_submit_button("Save")
+        if button_save:
+            file_path = create_file_name(uploaded_file.name, State.LOADER.value)
+            save_pickle(
+                dict_docs[f"doc_{picked_loader}"],
+            )

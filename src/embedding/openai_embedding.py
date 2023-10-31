@@ -5,6 +5,7 @@ from time import sleep
 import openai
 import tqdm
 from data_model.document import Document
+from src.utils.date_utils import get_date_today_str
 from src.utils.openai_utils import get_openai_key
 
 openai.api_key = get_openai_key()
@@ -44,7 +45,7 @@ def get_nb_tokens(embedding: dict):
 
 
 def save_embeddings(embeddings):
-    str_date = date.today().strftime("%Y%m%d")
+    str_date = get_date_today_str()
     with open(
         f"../data/processed/province-sud/BaieDesCitrons_barriere_01062023_{str_date}.pickle",
         "wb",
