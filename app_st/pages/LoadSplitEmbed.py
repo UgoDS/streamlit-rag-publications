@@ -3,12 +3,12 @@ from src.embedding.huggingface_embedding import add_embedding
 from src.embedding.openai_embedding import add_embedding_openai
 from src.loader.loader import load_pdf
 from src.transformer.splitter import split_documents
-from app_st.utils_st import init_session_state, gst, load_file
+from app_st.utils_st import init_session_states, gst, load_file
 
 nb_openai_used_tokens = 0
 
 
-init_session_state(["doc"])
+init_session_states(["doc"])
 
 st.title("Q&A Pipeline: Load, Transform, Embed, Similarity, Generation")
 

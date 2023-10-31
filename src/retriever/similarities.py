@@ -1,6 +1,6 @@
 import numpy as np
 from sentence_transformers import util
-from src.data_model.document import Document
+from data_model.document import Document
 
 
 def find_top_sub_documents(doc: Document, query_embedding: list, top_n: int = 5):
