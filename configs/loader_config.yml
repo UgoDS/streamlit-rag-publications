@@ -1,0 +1,23 @@
+PYPDF:
+  name: PyPDF2
+  url: https://github.com/py-pdf/pypdf/tree/3.0.0
+  description: PyPDF2 is a free and open source pure-python PDF library capable of splitting, merging, cropping, and transforming the pages of PDF files. It can also add custom data, viewing options, and passwords to PDF files. PyPDF2 can retrieve text and metadata from PDFs as well.
+  github_stars: 6500
+
+PYPDFIUM:
+  name: pypdfium
+  url: https://github.com/pypdfium2-team/pypdfium2
+  description: pypdfium2 is an ABI-level Python 3 binding to PDFium, a powerful and liberal-licensed library for PDF rendering, inspection, manipulation and creation. It is built with ctypesgen and external PDFium binaries. The custom setup infrastructure provides a seamless packaging and installation process. A wide range of platforms is supported with pre-built packages. pypdfium2 includes helpers to simplify common use cases, while the raw PDFium/ctypes API remains accessible as well.
+  github_stars: 192
+
+PYMUPDF:
+  name: PyMuPDF
+  url: https://pymupdf.readthedocs.io/en/latest/
+  description: PyMuPDF is a high performance Python library for data extraction, analysis, conversion & manipulation of PDF (and other) documents.
+  github_stars: 3100
+
+PDFPLUMBER:
+  name: pdfplumber
+  url: 
+  description: Plumb a PDF for detailed information about each text character, rectangle, and line. Plus -> Table extraction and visual debugging. Works best on machine-generated, rather than scanned, PDFs. Built on pdfminer.six.
+  github_stars: 4700

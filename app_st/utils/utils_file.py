@@ -4,9 +4,9 @@ from data_model.state import State
 from src.utils.date_utils import get_date_today_str
 
 
-def create_file_name(filename: str, state: State):
+def create_file_name(filename: str, state: State, loader: str):
     date_str = get_date_today_str()
-    return f"data/{state.value}/{filename}_{date_str}.pk"
+    return f"data/{state}/{loader}_{filename}_{date_str}.pk"
 
 
 def save_pickle(file, file_path):

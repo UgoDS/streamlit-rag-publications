@@ -13,7 +13,12 @@ def load_pdf(pdf_path: str, loader: str):
     list_sub_docs = []
     for page in list_txt_pages:
         list_sub_docs.append(SubDocument(sub_id=uuid.uuid1(), text=page))
-    return Document(id=uuid.uuid1(), nb_pages=nb_pages, sub_documents=list_sub_docs)
+    return Document(
+        id=uuid.uuid1(),
+        nb_pages=nb_pages,
+        sub_documents=list_sub_docs,
+        loader_name=loader,
+    )
 
 
 # TODO add parameters for each loader

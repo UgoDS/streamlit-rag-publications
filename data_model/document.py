@@ -17,3 +17,4 @@ class Document(BaseModel):
     sub_documents: list[SubDocument] = None
     embedding_model: str = None
     splitter_method: str = None
+    loader_name: str = None

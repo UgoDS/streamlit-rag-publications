@@ -1,4 +1,5 @@
 from enum import Enum
+from dataclasses import dataclass
 
 
 class Loader(Enum):
@@ -6,3 +7,11 @@ class Loader(Enum):
     PYPDFIUM = "pypdfium"
     PYMUPDF = "PyMuPDF"
     PDFPLUMBER = "pdfplumber"
+
+
+@dataclass
+class LoaderDescription:
+    name: str
+    url: str
+    description: str
+    github_stars: int
