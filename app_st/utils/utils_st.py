@@ -1,6 +1,16 @@
 import streamlit as st
 import base64
 from src.loader.loader import load_pdf
+from src.transformer.splitter import split_text
+
+
+def get_nb_pages(uploaded_file):
+    loader_ = "PyPDF"
+    return load_file(uploaded_file, loader_).nb_pages
+
+
+def split_file(text, splitter, *args):
+    return split_text(text, splitter, *args)
 
 
 @st.cache_data

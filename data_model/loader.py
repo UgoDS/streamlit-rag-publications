@@ -1,5 +1,6 @@
 from enum import Enum
 from dataclasses import dataclass
+from typing import Optional
 
 
 class Loader(Enum):
@@ -9,9 +10,16 @@ class Loader(Enum):
     PDFPLUMBER = "pdfplumber"
 
 
+class Splitter(Enum):
+    CHARACTERTEXT = "CharacterTextSplitter"
+    RECURSIVECHARACTERTEXT = "RecursiveCharacterTextSplitter"
+    SEMANTICCHUNKER = "SemanticChunker"
+    TOKENTEXTPLITTER = "TokenTextSplitter"
+
+
 @dataclass
 class LoaderDescription:
     name: str
     url: str
     description: str
-    github_stars: int
+    github_stars: Optional[int]

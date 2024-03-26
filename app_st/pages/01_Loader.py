@@ -1,9 +1,10 @@
 import streamlit as st
 from app_st.utils.utils_loader import display_loader_description
-from app_st.utils.utils_st import init_session_states, gst, load_file
+from app_st.utils.utils_st import init_session_states, gst, load_file, get_nb_pages
 from data_model.loader import Loader
 from data_model.state import State
 from app_st.utils.utils_file import save_pickle, create_file_name
+from src.loader import loader
 
 CONFIG_LOADER_PATH = "configs/loader_config.yml"
 st.set_page_config("Loader", layout="wide", initial_sidebar_state="collapsed")
@@ -36,12 +37,8 @@ if uploaded_file is not None:
         if button_loaders:
             pass
 
-        def get_nb_pages():
-            loader_ = "PyPDF"
-            return load_file(uploaded_file, loader_).nb_pages
-
-        nb_pages = get_nb_pages()
-        st.warning(f"There are {nb_pages} pages")
+        nb_pages = get_nb_pages(uploaded_file)
+        st.info(f"There are {nb_pages} pages")
 
         if len(loader_selected) > 0:
             page_selected = st.selectbox(
@@ -65,4 +62,4 @@ if uploaded_file is not None:
                 uploaded_file.name, State.LOADER.value, picked_loader
             )
             save_pickle(dict_docs[f"doc_{picked_loader}"], file_path)
-            st.warning(f"Save here: {file_path}")
+            st.success(f"Save here: {file_path}")

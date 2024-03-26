@@ -1,0 +1,23 @@
+CHARACTERTEXT:
+  name: Split by character
+  url: https://python.langchain.com/docs/modules/data_connection/document_transformers/character_text_splitter
+  description: This is the simplest method. This splits based on characters (by default “”) and measure chunk length by number of characters.
+  github_stars: 0
+
+RECURSIVECHARACTERTEXT:
+  name: Recursively split by character
+  url: https://python.langchain.com/docs/modules/data_connection/document_transformers/recursive_text_splitter
+  description: This text splitter is the recommended one for generic text. It is parameterized by a list of characters. It tries to split on them in order until the chunks are small enough. The default list is ["\n\n", "\n", " ", ""]. This has the effect of trying to keep all paragraphs (and then sentences, and then words) together as long as possible, as those would generically seem to be the strongest semantically related pieces of text.
+  github_stars: 0
+
+SEMANTICCHUNKER:
+  name: Semantic Chunking
+  url: https://python.langchain.com/docs/modules/data_connection/document_transformers/semantic-chunker
+  description: Splits the text based on semantic similarity.
+  github_stars: 0
+
+TOKENTEXTPLITTER:
+  name: Split by Tokens
+  url: https://python.langchain.com/docs/modules/data_connection/document_transformers/split_by_token
+  description: Language models have a token limit. You should not exceed the token limit. When you split your text into chunks it is therefore a good idea to count the number of tokens. There are many tokenizers. When you count tokens in your text you should use the same tokenizer as used in the language model.
+  github_stars: 0

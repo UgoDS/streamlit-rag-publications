@@ -42,3 +42,6 @@ def extract_text(pdf_path, loader):
     else:
         raise ValueError
     return nb_pages, list_txt_pages
+
+
+

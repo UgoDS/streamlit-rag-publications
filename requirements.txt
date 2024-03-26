@@ -29,6 +29,13 @@ pypdfium2==4.22.0
 pymupdf==1.23.5
 pdfplumber==0.10.3
 
+# splitter
+langchain-text-splitters==0.0.1
+langchain_experimental==0.0.55
+langchain_openai==0.1.1
+tiktoken==0.6.0
+
+
 # embedding
 openai==0.28.1
 
